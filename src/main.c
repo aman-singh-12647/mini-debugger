@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 
   while (1)
   {
-    printf("dbg> ");
+    printf("\ndbg> ");
     fgets(command, sizeof(command), stdin);
 
     if (strncmp(command, "break", 5) == 0)
