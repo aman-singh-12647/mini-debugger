@@ -4,6 +4,8 @@
 
 #include "debugger.h"
 #include "breakpoints.h"
+#include "step.h"
+#include "regs.h"
 
 /**
  * main - Entry point for the mini-debugger application
@@ -43,6 +45,14 @@ int main(int argc, char *argv[])
       {
         handle_breakpoint(pid, &bp);
       }
+    }
+    else if (strncmp(command, "step", 4) == 0)
+    {
+      single_step(pid);
+    }
+    else if (strncmp(command, "regs", 4) == 0)
+    {
+      print_registers(pid);
     }
     else if (strncmp(command, "exit", 4) == 0)
     {
